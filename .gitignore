@@ -1,0 +1,30 @@
+# Artefacts de données lourds (gelées localement, manifestées dans registry/datasets/)
+data/raw/**
+!data/raw/.gitkeep
+data/canonical/**
+!data/canonical/.gitkeep
+data/reference/**
+!data/reference/.gitkeep
+
+# Sorties binaires / modèles
+*.zip
+*.sqlite
+*.sqlite3
+*.parquet
+*.feather
+*.npz
+*.npy
+*.h5
+*.gguf
+*.onnx
+*.safetensors
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Éditeurs / OS
+.DS_Store
