@@ -1,0 +1,4 @@
+# Prise en charge direnv (optionnel ; la voie officielle reste `nix develop`).
+# Copier vers .envrc puis : direnv allow
+use flake
+PATH_add "$HOME/.local/bin"

@@ -1,0 +1,32 @@
+# Configuration projet — 83_HYDAT-X
+# Valeurs de référence ; les valeurs mesurées vivent dans registry/ et metadata/.
+
+project:
+  id: HYDAT-X
+  name: Independent Flood Prediction Benchmark
+  status: bootstrap
+  principle: independence from candidate dataset
+  architecture_ref: docs/REF-CODEX-HYDAT-X-plateforme-contre-expertise.md
+  protocol: docs/HYDAT-X-Reference-Protocol-v0.1.md
+
+python:
+  version_reference: ">=3.10,<3.13"   # contrainte Soup : Python 3.10-3.12 uniquement
+
+nix:
+  via: "nix develop"                  # voie officielle (flake devShell)
+  direnv: .envrc.example              # optionnel, non requis
+
+hydat:
+  source_url: https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/
+  prefer: sqlite                      # jamais Access sauf nécessité documentée
+  raw_dir: data/raw/hydat
+  documentation_subdir: documentation
+
+soup:
+  cli: soup-cli                       # uv tool install soup-cli (extras [train] NON requis)
+  usage: evaluation/gating périphérique — jamais cœur du référentiel HYDAT
+
+separation:
+  raw: data/raw/                      # copie exacte ECCC, jamais modifiée
+  canonical: data/canonical/          # transformé HYDAT-X, provenance requise avant apparition
+  reference: data/reference/          # artefacts gelés pour benchmarks (ID+version+hash+source+période+population+critères)

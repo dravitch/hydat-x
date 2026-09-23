@@ -1,4 +1,4 @@
-# Artefacts de données lourds (gelées localement, manifestées dans registry/datasets/)
+# Artefacts de données lourds — jamais versionnés (manifestés dans registry/datasets/)
 data/raw/**
 !data/raw/.gitkeep
 data/canonical/**
@@ -6,10 +6,12 @@ data/canonical/**
 data/reference/**
 !data/reference/.gitkeep
 
-# Sorties binaires / modèles
+# Sorties binaires / modèles / archives
 *.zip
+*.mdb
 *.sqlite
 *.sqlite3
+*.db
 *.parquet
 *.feather
 *.npz
@@ -20,11 +22,20 @@ data/reference/**
 *.safetensors
 *.bin
 
-# Python
+# Artefacts analytiques dérivés (métadonnées de stations volumineuses)
+metadata/stations/*
+!metadata/stations/.gitkeep
+!metadata/stations/hydat-schema.json
+!metadata/stations/hydat-schema.txt
+logs/
+
+# Python / uv
 __pycache__/
 *.pyc
 .pytest_cache/
 .venv/
+.mypy_cache/
+.ruff_cache/
 
 # Éditeurs / OS
 .DS_Store

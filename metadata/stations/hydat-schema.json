@@ -1,0 +1,1807 @@
+{
+  "database": "/home/andrei/Projects/83_HYDAT-X/data/raw/hydat/20260717/sqlite/Hydat.sqlite3",
+  "release": "20260717",
+  "tables": {
+    "AGENCY_LIST": {
+      "columns": [
+        {
+          "name": "AGENCY_ID",
+          "type": "INTEGER"
+        },
+        {
+          "name": "AGENCY_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "AGENCY_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 252
+    },
+    "ANNUAL_INSTANT_PEAKS": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "PEAK_CODE",
+          "type": "TEXT"
+        },
+        {
+          "name": "PRECISION_CODE",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "DAY",
+          "type": "INTEGER"
+        },
+        {
+          "name": "HOUR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MINUTE",
+          "type": "INTEGER"
+        },
+        {
+          "name": "TIME_ZONE",
+          "type": "TEXT"
+        },
+        {
+          "name": "PEAK",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SYMBOL",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 182723
+    },
+    "ANNUAL_STATISTICS": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MEAN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "MIN_MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MIN_DAY",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MIN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "MIN_SYMBOL",
+          "type": "TEXT"
+        },
+        {
+          "name": "MAX_MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MAX_DAY",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MAX",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "MAX_SYMBOL",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 201916
+    },
+    "CONCENTRATION_SYMBOLS": {
+      "columns": [
+        {
+          "name": "CONCENTRATION_SYMBOL",
+          "type": "TEXT"
+        },
+        {
+          "name": "CONCENTRATION_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "CONCENTRATION_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 8
+    },
+    "DATA_SYMBOLS": {
+      "columns": [
+        {
+          "name": "SYMBOL_ID",
+          "type": "TEXT"
+        },
+        {
+          "name": "SYMBOL_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "SYMBOL_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 5
+    },
+    "DATA_TYPES": {
+      "columns": [
+        {
+          "name": "DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATA_TYPE_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATA_TYPE_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 5
+    },
+    "DATUM_LIST": {
+      "columns": [
+        {
+          "name": "DATUM_ID",
+          "type": "INTEGER"
+        },
+        {
+          "name": "DATUM_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATUM_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 145
+    },
+    "DLY_FLOWS": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "FULL_MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "NO_DAYS",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTHLY_MEAN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "MONTHLY_TOTAL",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MIN",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MIN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MAX",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MAX",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW1",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL1",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW2",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL2",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW3",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL3",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW4",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL4",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW5",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL5",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW6",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL6",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW7",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL7",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW8",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL8",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW9",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL9",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW10",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL10",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW11",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL11",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW12",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL12",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW13",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL13",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW14",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL14",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW15",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL15",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW16",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL16",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW17",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL17",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW18",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL18",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW19",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL19",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW20",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL20",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW21",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL21",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW22",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL22",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW23",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL23",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW24",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL24",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW25",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL25",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW26",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL26",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW27",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL27",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW28",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL28",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW29",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL29",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW30",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL30",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW31",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL31",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 1779871
+    },
+    "DLY_LEVELS": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "PRECISION_CODE",
+          "type": "INTEGER"
+        },
+        {
+          "name": "FULL_MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "NO_DAYS",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTHLY_MEAN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "MONTHLY_TOTAL",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MIN",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MIN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MAX",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MAX",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL1",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL1",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL2",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL2",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL3",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL3",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL4",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL4",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL5",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL5",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL6",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL6",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL7",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL7",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL8",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL8",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL9",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL9",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL10",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL10",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL11",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL11",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL12",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL12",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL13",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL13",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL14",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL14",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL15",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL15",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL16",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL16",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL17",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL17",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL18",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL18",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL19",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL19",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL20",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL20",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL21",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL21",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL22",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL22",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL23",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL23",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL24",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL24",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL25",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL25",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL26",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL26",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL27",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL27",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL28",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL28",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL29",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL29",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL30",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL30",
+          "type": "TEXT"
+        },
+        {
+          "name": "LEVEL31",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LEVEL_SYMBOL31",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 840225
+    },
+    "MEASUREMENT_CODES": {
+      "columns": [
+        {
+          "name": "MEASUREMENT_CODE",
+          "type": "TEXT"
+        },
+        {
+          "name": "MEASUREMENT_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "MEASUREMENT_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 6
+    },
+    "OPERATION_CODES": {
+      "columns": [
+        {
+          "name": "OPERATION_CODE",
+          "type": "TEXT"
+        },
+        {
+          "name": "OPERATION_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "OPERATION_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 3
+    },
+    "PEAK_CODES": {
+      "columns": [
+        {
+          "name": "PEAK_CODE",
+          "type": "TEXT"
+        },
+        {
+          "name": "PEAK_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "PEAK_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 2
+    },
+    "PRECISION_CODES": {
+      "columns": [
+        {
+          "name": "PRECISION_CODE",
+          "type": "INTEGER"
+        },
+        {
+          "name": "PRECISION_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "PRECISION_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 2
+    },
+    "REGIONAL_OFFICE_LIST": {
+      "columns": [
+        {
+          "name": "REGIONAL_OFFICE_ID",
+          "type": "INTEGER"
+        },
+        {
+          "name": "REGIONAL_OFFICE_NAME_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "REGIONAL_OFFICE_NAME_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 8
+    },
+    "SAMPLE_REMARK_CODES": {
+      "columns": [
+        {
+          "name": "SAMPLE_REMARK_CODE",
+          "type": "INTEGER"
+        },
+        {
+          "name": "SAMPLE_REMARK_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLE_REMARK_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 6
+    },
+    "SED_DATA_TYPES": {
+      "columns": [
+        {
+          "name": "SED_DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "SED_DATA_TYPE_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "SED_DATA_TYPE_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 5
+    },
+    "SED_DLY_LOADS": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "FULL_MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "NO_DAYS",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTHLY_MEAN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "MONTHLY_TOTAL",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MIN",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MIN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MAX",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MAX",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD1",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD2",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD3",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD4",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD5",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD6",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD7",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD8",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD9",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD10",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD11",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD12",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD13",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD14",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD15",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD16",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD17",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD18",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD19",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD20",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD21",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD22",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD23",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD24",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD25",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD26",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD27",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD28",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD29",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD30",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LOAD31",
+          "type": "DOUBLE"
+        }
+      ],
+      "row_count": 26338
+    },
+    "SED_DLY_SUSCON": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "FULL_MONTH",
+          "type": "INTEGER"
+        },
+        {
+          "name": "NO_DAYS",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTHLY_TOTAL",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MIN",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MIN",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FIRST_DAY_MAX",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MAX",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON1",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL1",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON2",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL2",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON3",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL3",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON4",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL4",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON5",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL5",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON6",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL6",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON7",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL7",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON8",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL8",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON9",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL9",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON10",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL10",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON11",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL11",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON12",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL12",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON13",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL13",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON14",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL14",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON15",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL15",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON16",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL16",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON17",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL17",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON18",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL18",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON19",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL19",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON20",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL20",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON21",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL21",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON22",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL22",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON23",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL23",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON24",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL24",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON25",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL25",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON26",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL26",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON27",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL27",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON28",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL28",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON29",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL29",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON30",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL30",
+          "type": "TEXT"
+        },
+        {
+          "name": "SUSCON31",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SUSCON_SYMBOL31",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 27921
+    },
+    "SED_SAMPLES": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "SED_DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATE",
+          "type": "DATETIME"
+        },
+        {
+          "name": "SAMPLE_REMARK_CODE",
+          "type": "TEXT"
+        },
+        {
+          "name": "TIME_SYMBOL",
+          "type": "TEXT"
+        },
+        {
+          "name": "FLOW",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "FLOW_SYMBOL",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLER_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLING_VERTICAL_LOCATION",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLING_VERTICAL_SYMBOL",
+          "type": "TEXT"
+        },
+        {
+          "name": "TEMPERATURE",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "CONCENTRATION",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "CONCENTRATION_SYMBOL",
+          "type": "TEXT"
+        },
+        {
+          "name": "DISSOLVED_SOLIDS",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SAMPLE_DEPTH",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "STREAMBED",
+          "type": "TEXT"
+        },
+        {
+          "name": "SV_DEPTH1",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SV_DEPTH2",
+          "type": "DOUBLE"
+        }
+      ],
+      "row_count": 127468
+    },
+    "SED_SAMPLES_PSD": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "SED_DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATE",
+          "type": "DATETIME"
+        },
+        {
+          "name": "PARTICLE_SIZE",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "PERCENT",
+          "type": "INTEGER"
+        }
+      ],
+      "row_count": 218534
+    },
+    "SED_VERTICAL_LOCATION": {
+      "columns": [
+        {
+          "name": "SAMPLING_VERTICAL_LOCATION_ID",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLING_VERTICAL_LOCATION_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLING_VERTICAL_LOCATION_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 9
+    },
+    "SED_VERTICAL_SYMBOLS": {
+      "columns": [
+        {
+          "name": "SAMPLING_VERTICAL_SYMBOL",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLING_VERTICAL_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "SAMPLING_VERTICAL_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 5
+    },
+    "STATIONS": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "STATION_NAME",
+          "type": "TEXT"
+        },
+        {
+          "name": "PROV_TERR_STATE_LOC",
+          "type": "TEXT"
+        },
+        {
+          "name": "REGIONAL_OFFICE_ID",
+          "type": "TEXT"
+        },
+        {
+          "name": "HYD_STATUS",
+          "type": "TEXT"
+        },
+        {
+          "name": "SED_STATUS",
+          "type": "TEXT"
+        },
+        {
+          "name": "LATITUDE",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LONGITUDE",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "DRAINAGE_AREA_GROSS",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "DRAINAGE_AREA_EFFECT",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "RHBN",
+          "type": "INTEGER"
+        },
+        {
+          "name": "REAL_TIME",
+          "type": "INTEGER"
+        },
+        {
+          "name": "CONTRIBUTOR_ID",
+          "type": "INTEGER"
+        },
+        {
+          "name": "OPERATOR_ID",
+          "type": "INTEGER"
+        },
+        {
+          "name": "DATUM_ID",
+          "type": "INTEGER"
+        }
+      ],
+      "row_count": 8057
+    },
+    "STN_DATA_COLLECTION": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR_FROM",
+          "type": "INTEGER"
+        },
+        {
+          "name": "YEAR_TO",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MEASUREMENT_CODE",
+          "type": "TEXT"
+        },
+        {
+          "name": "OPERATION_CODE",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 24133
+    },
+    "STN_DATA_RANGE": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "SED_DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR_FROM",
+          "type": "INTEGER"
+        },
+        {
+          "name": "YEAR_TO",
+          "type": "INTEGER"
+        },
+        {
+          "name": "RECORD_LENGTH",
+          "type": "INTEGER"
+        }
+      ],
+      "row_count": 12260
+    },
+    "STN_DATUM_CONVERSION": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATUM_ID_FROM",
+          "type": "INTEGER"
+        },
+        {
+          "name": "DATUM_ID_TO",
+          "type": "INTEGER"
+        },
+        {
+          "name": "CONVERSION_FACTOR",
+          "type": "DOUBLE"
+        }
+      ],
+      "row_count": 2814
+    },
+    "STN_DATUM_UNRELATED": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATUM_ID",
+          "type": "INTEGER"
+        },
+        {
+          "name": "YEAR_FROM",
+          "type": "DATETIME"
+        },
+        {
+          "name": "YEAR_TO",
+          "type": "DATETIME"
+        }
+      ],
+      "row_count": 17
+    },
+    "STN_OPERATION_SCHEDULE": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "DATA_TYPE",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "MONTH_FROM",
+          "type": "TEXT"
+        },
+        {
+          "name": "MONTH_TO",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 241704
+    },
+    "STN_REGULATION": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "YEAR_FROM",
+          "type": "INTEGER"
+        },
+        {
+          "name": "YEAR_TO",
+          "type": "INTEGER"
+        },
+        {
+          "name": "REGULATED",
+          "type": "INTEGER"
+        }
+      ],
+      "row_count": 8461
+    },
+    "STN_REMARKS": {
+      "columns": [
+        {
+          "name": "STATION_NUMBER",
+          "type": "TEXT"
+        },
+        {
+          "name": "REMARK_TYPE_CODE",
+          "type": "INTEGER"
+        },
+        {
+          "name": "YEAR",
+          "type": "INTEGER"
+        },
+        {
+          "name": "REMARK_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "REMARK_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 16144
+    },
+    "STN_REMARK_CODES": {
+      "columns": [
+        {
+          "name": "REMARK_TYPE_CODE",
+          "type": "INTEGER"
+        },
+        {
+          "name": "REMARK_TYPE_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "REMARK_TYPE_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 6
+    },
+    "STN_STATUS_CODES": {
+      "columns": [
+        {
+          "name": "STATUS_CODE",
+          "type": "TEXT"
+        },
+        {
+          "name": "STATUS_EN",
+          "type": "TEXT"
+        },
+        {
+          "name": "STATUS_FR",
+          "type": "TEXT"
+        }
+      ],
+      "row_count": 2
+    },
+    "VERSION": {
+      "columns": [
+        {
+          "name": "Version",
+          "type": "TEXT"
+        },
+        {
+          "name": "Date",
+          "type": "DATETIME"
+        }
+      ],
+      "row_count": 1
+    }
+  },
+  "table_count": 33,
+  "station_table_detected": "STATIONS",
+  "station_table_heuristic": "regex STATION* + score colonnes id/nom/lat/long + taille<50k",
+  "station_count": 8057,
+  "period": {
+    "start": 1850,
+    "end": 2026
+  }
+}

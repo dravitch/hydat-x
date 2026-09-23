@@ -1,0 +1,64 @@
+dataset_id: hydat-reference-20260717
+name: HYDAT Reference
+source: ECCC (Environnement et Changement climatique Canada)
+release: '20260717'
+retrieved_at_utc: '2026-09-23T08:57:38Z'
+raw_artifacts:
+- path: data/raw/hydat/20260717/HYDAT_Definition_EN.pdf
+  sha256: b3ab1954bf5aeedb026cebe939764fcfbda0266fb267cb6a7315544c9be8e1ee
+- path: data/raw/hydat/20260717/HYDAT_Definition_FR.pdf
+  sha256: a74b0c8147f7e70587bf24bf05b124b2707e3fa8d4ae1cbca669ff69795a32b9
+- path: data/raw/hydat/20260717/HYDAT_ReleaseNotes_20260717_EN.pdf
+  sha256: a9e481777fe635ff52a7630610578469a0e5bfc28b37bd927c933c6b894b3327
+- path: data/raw/hydat/20260717/HYDAT_ReleaseNotes_20260717_FR.pdf
+  sha256: ab0f126e721ebdc453f15cc9c8a0bab73a615d3aae0bb4ae2758eaad036bc92c
+database:
+  format: sqlite
+  path: data/raw/hydat/20260717/sqlite/Hydat.sqlite3
+  sha256: 9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517
+schema:
+  table_count: 33
+  station_table: STATIONS
+stations:
+  count: 8057
+period:
+  start: 1850
+  end: 2026
+tables:
+  AGENCY_LIST: 252
+  ANNUAL_INSTANT_PEAKS: 182723
+  ANNUAL_STATISTICS: 201916
+  CONCENTRATION_SYMBOLS: 8
+  DATA_SYMBOLS: 5
+  DATA_TYPES: 5
+  DATUM_LIST: 145
+  DLY_FLOWS: 1779871
+  DLY_LEVELS: 840225
+  MEASUREMENT_CODES: 6
+  OPERATION_CODES: 3
+  PEAK_CODES: 2
+  PRECISION_CODES: 2
+  REGIONAL_OFFICE_LIST: 8
+  SAMPLE_REMARK_CODES: 6
+  SED_DATA_TYPES: 5
+  SED_DLY_LOADS: 26338
+  SED_DLY_SUSCON: 27921
+  SED_SAMPLES: 127468
+  SED_SAMPLES_PSD: 218534
+  SED_VERTICAL_LOCATION: 9
+  SED_VERTICAL_SYMBOLS: 5
+  STATIONS: 8057
+  STN_DATA_COLLECTION: 24133
+  STN_DATA_RANGE: 12260
+  STN_DATUM_CONVERSION: 2814
+  STN_DATUM_UNRELATED: 17
+  STN_OPERATION_SCHEDULE: 241704
+  STN_REGULATION: 8461
+  STN_REMARKS: 16144
+  STN_REMARK_CODES: 6
+  STN_STATUS_CODES: 2
+  VERSION: 1
+transformations:
+- none
+status: raw-reference
+generated_at_utc: '2026-09-23T12:35:20Z'
