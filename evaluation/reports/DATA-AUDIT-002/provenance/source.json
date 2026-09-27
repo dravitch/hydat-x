@@ -1,0 +1,6 @@
+{
+  "access": "DuckDB SQLite attachment READ_ONLY",
+  "path": "data/raw/hydat/20260717/sqlite/Hydat.sqlite3",
+  "release": "20260717",
+  "sha256": "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517"
+}

@@ -1,0 +1,6 @@
+{
+  "duckdb": "1.5.5",
+  "pandas": "2.3.3",
+  "platform": "Linux-6.18.50-x86_64-with-glibc2.40",
+  "python": "3.12.8"
+}

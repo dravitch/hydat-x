@@ -5,6 +5,9 @@ indépendant pour reproduire, contrôler, challenger et comparer les modèles de
 d'inondation soumis à l'équipe, sans dépendre du code, des données préparées ni des métriques
 produites par l'équipe évaluée.
 
+> **Pour comprendre rapidement la thèse, les hypothèses et les données qui manquent à HYDAT seul :**
+> ouvrir [`docs/HYDAT-X-PROJECT-SUMMARY.html`](docs/HYDAT-X-PROJECT-SUMMARY.html).
+
 La plateforme **s'appuie** sur :
 - la documentation **agent-1** de DELTA-5 (`81_DELTA-5/research/deepreview-cobaye-01/agent-1/`) — mathématique des événements rares (EVT/PAC) ;
 - la documentation **agent-5** (diagnostic technique HYDAT/AUC-ROC/ML, `82_SCHEMA/missions/agent-5/`) — mécanismes non prévisionnels, contrôles négatifs ;

@@ -1,0 +1,114 @@
+target_registry_id: target-definitions-v0.1
+version: "0.1"
+status: draft
+date: "2026-09-24"
+mission: REFERENCE-01
+protocol: benchmark/protocols/reference-v0.2-draft.yaml
+evidence: evaluation/reports/DATA-AUDIT-001/target-events.csv
+
+# Vocabulaire commun (fixé)
+common:
+  observation: debit_moyen_journalier (m³/s), cellule jour×station publique
+  valid_day_rule: "value > 0 OR symbol = 'D'"
+  unit_event: run = segment de jours consécutifs vérifiant la condition
+  target_semantics: binaire jour×station (1 si jour dans un run qualifié)
+  threshold_information_time:
+    whole-series: future_informed        # diagnostic/descriptif uniquement
+    refhalf: historical_reference        # seuil = 1ère moitié du registre de la station
+  horizon:
+    day: ["T1", "T4"]
+    hydrological_year: ["T3"]
+
+# Mesures exploratoires (release 20260717, dataset entier)
+exploratory_results:
+  T1-q095-whole:  {events: 447134, stations: 6402, med_dur: 3, max_dur: 470}
+  T1-q099-whole:  {events: 148200, stations: 6309, med_dur: 2, max_dur: 230}
+  T1-q0995-whole: {events: 87798,  stations: 6237, med_dur: 2, max_dur: 135}
+  T1-q0999-whole: {events: 25873,  stations: 6071, med_dur: 1, max_dur: 40}
+  T1-q095-refhalf: {events: 238799, stations: 5840, med_dur: 3, max_dur: 3663}
+  T1-q099-refhalf: {events: 85076,  stations: 5336, med_dur: 2, max_dur: 3663}
+  T3-q08-whole:   {events: 18249,  stations: 3360, type: annual_peak}
+  T3-q09-whole:   {events: 10069,  stations: 3357, type: annual_peak}
+  T3-q095-whole:  {events: 6006,   stations: 3351, type: annual_peak}
+  T4-q095-N3-whole:  {events: 223909, stations: 6225, med_dur: 6, max_dur: 470}
+  T4-q095-N5-whole:  {events: 140802, stations: 6000, med_dur: 9, max_dur: 470}
+  T4-q099-N3-whole:  {events: 54554,  stations: 5475, med_dur: 5, max_dur: 230}
+  T4-q099-N5-whole:  {events: 28448,  stations: 4534, med_dur: 7, max_dur: 230}
+  T4-q099-N10-whole: {events: 8937,   stations: 2699, med_dur: 14, max_dur: 230}
+
+definitions:
+
+  - id: T1
+    name: "dépassement de quantile haut de débit (flow threshold)"
+    family: exceedance
+    condition: "value > quantile(q, base)"
+    parameters:
+      q: [0.95, 0.99, 0.995, 0.999]
+      base: [whole, refhalf]
+    run_rule: jours consécutifs strictement au-dessus
+    event: segment continu
+    horizon: day
+    note: "0.0 jamais > quantile haut ⇒ politique zéro sans impact sur este famille"
+
+  - id: T2
+    name: "dépassement d'un seuil absolu de crue (flood threshold)"
+    family: absolute_threshold
+    status: HUMAN_DECISION_REQUIRED
+    reason: "HYDAT ne contient aucun seuil officiel d'alerte/inondation. Source externe (règlementaire) requise. Aucun événement T2 calculé."
+    condition: "value > S_officiel"
+  - id: T3
+    name: "pic annuel extrême (peak exceedance)"
+    family: annual_peak
+    source: ANNUAL_INSTANT_PEAKS (PEAK_TYPE='H')
+    condition: "pic annuel > quantile(q) de la distribution des pics (base)"
+    parameters:
+      q: [0.8, 0.9, 0.95]
+      base: [whole, refhalf]
+    event: "année × station à pic exceptionnel"
+    horizon: hydrological_year
+
+  - id: T4
+    name: "persistance de dépassement (multi-day exceedance)"
+    family: persistence
+    condition: "run de ≥ N jours consécutifs où value > quantile(q, base)"
+    parameters:
+      q: [0.95, 0.99]
+      N: [3, 5, 10]
+      base: [whole, refhalf]
+    event: "jour 1 si dans un run de longueur ≥ N"
+    horizon: day
+
+# Cibles retenues pour l'évaluation v0.2 (seules 'reference' évaluables)
+candidates_for_evaluation:
+  - target_id: "T1-q099-refhalf"
+    definition: T1
+    q: 0.99
+    base: refhalf
+    threshold_information_time: historical_reference
+  - target_id: "T1-q0995-refhalf"
+    definition: T1
+    q: 0.995
+    base: refhalf
+    threshold_information_time: historical_reference
+  - target_id: "T3-peak-q09-refhalf"
+    definition: T3
+    q: 0.9
+    base: refhalf
+    threshold_information_time: historical_reference
+  - target_id: "T4-q099-N5-refhalf"
+    definition: T4
+    q: 0.99
+    N: 5
+    base: refhalf
+    threshold_information_time: historical_reference
+
+# Paramètres transverses à valider au gel
+cross_cutting_open_decisions:
+  D4_max_event_duration_d: 365      # plafond durée d'un run (runs pluriannuels refhalf)
+  D4_min_gap_days_between_events: 5 # jours sous seuil requis entre deux événements
+  horizon_year_format: hydrological # vs calendaire (à trancher pour T3)
+
+artifacts:
+  per_target_events: evaluation/reports/DATA-AUDIT-001/events/{target_id}.csv
+  comparison: evaluation/reports/DATA-AUDIT-001/target-events.csv
+  target_objects: benchmark/targets/                      # YAML par cible (au gel)

@@ -1,0 +1,19 @@
+{
+  "cache_path": "/home/andrei/Projects/83_HYDAT-X/data/canonical/hydat/20260717/daily-flows-v2.parquet",
+  "cache_sha256": "4554505fe342b1df0be0cf8e3cdf36e7c234e36b15986d1c724ad05135a66369",
+  "identity": {
+    "generator_sha256": {
+      "/home/andrei/Projects/83_HYDAT-X/scripts/audit_reference.py": "708572943bc68a206641737251a3d51e4917ca163a4acaba3ecbe2839497c913",
+      "/home/andrei/Projects/83_HYDAT-X/scripts/cache_manager.py": "27bd062c5b6b18dd2e2e050fb13749a5f26bdc7fea304fddf1b7a7d3bd291121"
+    },
+    "identity_sha256": "17fd3d09fe6f5fcb4091b89e85c39013ffc961b06feb9e728cb78ad9db9dfbc2",
+    "parameters": {
+      "duckdb_version": "1.5.5",
+      "table": "DLY_FLOWS",
+      "validity": "value>0 OR symbol='D'"
+    },
+    "schema_version": "hydat-daily-flow-v2",
+    "source_sha256": "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517"
+  },
+  "regeneration_reason": "identit\u00e9 du cache divergente"
+}

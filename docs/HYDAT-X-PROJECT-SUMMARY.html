@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Résumé décisionnel du projet HYDAT-X : thèse, hypothèses, méthode, résultats et prochaine étape.">
+  <title>HYDAT-X — Comprendre la thèse et l’hypothèse</title>
+  <style>
+    :root {
+      --ink: #16232a;
+      --muted: #56666e;
+      --paper: #f4f1e9;
+      --surface: #fffdf8;
+      --navy: #102a36;
+      --teal: #087f79;
+      --teal-soft: #d9efeb;
+      --gold: #d5a33a;
+      --gold-soft: #f7e9bf;
+      --red: #a54235;
+      --red-soft: #f5ded8;
+      --line: #d8d4c9;
+      --shadow: 0 18px 50px rgb(22 35 42 / 9%);
+      --radius: 18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); }
+    a { color: #006c68; text-underline-offset: 3px; }
+    a:hover { color: #004f4b; }
+    code {
+      padding: .12rem .34rem;
+      border-radius: 5px;
+      background: #e9ece8;
+      font-size: .9em;
+    }
+
+    .masthead {
+      width: 100%;
+      margin: 0;
+      color: #f8f6ef;
+      background:
+        radial-gradient(circle at 82% 18%, rgb(8 127 121 / 34%), transparent 33rem),
+        linear-gradient(135deg, #0d242f 0%, #173c46 100%);
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .masthead-inner,
+    main,
+    .footer-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .masthead-inner { padding: 64px 0 56px; }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: #92d8d1;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.12; }
+    h1 {
+      max-width: 880px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 6vw, 5.8rem);
+      font-weight: 600;
+      letter-spacing: -.045em;
+    }
+    .dek {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: #c7d7d9;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+    }
+    .status-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid rgb(255 255 255 / 18%);
+      color: #dbe6e5;
+      font-size: .92rem;
+    }
+    .status-line strong { color: white; }
+
+    main { padding: 56px 0 80px; }
+    section { margin-top: 72px; }
+    section:first-child { margin-top: 0; }
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.9rem, 4vw, 3.1rem);
+      font-weight: 600;
+      letter-spacing: -.025em;
+    }
+    h3 { margin: 0 0 10px; font-size: 1.07rem; }
+    p { margin: 0 0 1rem; }
+
+    .thesis {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px solid #bfdcd7;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .thesis::before {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      content: "";
+      background: var(--teal);
+    }
+    .thesis .lead {
+      max-width: 920px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 3.3vw, 2.55rem);
+      line-height: 1.3;
+    }
+    .thesis .plain {
+      max-width: 840px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-2, .grid-3, .metrics {
+      display: grid;
+      gap: 18px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .hypothesis { border-top: 5px solid var(--teal); }
+    .hypothesis.null { border-top-color: var(--red); }
+    .tag {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: #075c58;
+      background: var(--teal-soft);
+      font-size: .73rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .null .tag { color: #7d2d24; background: var(--red-soft); }
+    .hypothesis p:last-child { margin-bottom: 0; color: var(--muted); }
+
+    .callout {
+      margin-top: 18px;
+      padding: 22px 24px;
+      border-radius: 12px;
+      background: var(--gold-soft);
+      border-left: 5px solid var(--gold);
+    }
+    .callout strong { display: block; margin-bottom: 5px; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .step {
+      position: relative;
+      min-height: 146px;
+      padding: 20px 18px;
+      border-radius: 14px;
+      color: #eaf3f2;
+      background: var(--navy);
+    }
+    .step:not(:last-child)::after {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: -17px;
+      width: 22px;
+      height: 22px;
+      content: "→";
+      color: var(--gold);
+      font-size: 1.25rem;
+      font-weight: 900;
+      transform: translateY(-50%);
+    }
+    .step-num { color: #88d2cc; font-size: .72rem; font-weight: 850; letter-spacing: .1em; }
+    .step strong { display: block; margin: 8px 0; color: white; }
+    .step span { color: #b9cbcd; font-size: .88rem; }
+
+    .metric {
+      padding: 24px 20px;
+      border: 1px solid #c9dcd8;
+      border-radius: 14px;
+      background: #f9fffd;
+    }
+    .metric .number {
+      display: block;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1;
+    }
+    .metric .label { display: block; margin-top: 10px; color: var(--muted); font-size: .9rem; }
+
+    .truth-table {
+      width: 100%;
+      margin-top: 24px;
+      border-collapse: collapse;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 0 0 1px var(--line);
+    }
+    .truth-table th, .truth-table td {
+      padding: 15px 17px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .truth-table th { color: white; background: var(--navy); font-size: .82rem; }
+    .truth-table tr:last-child td { border-bottom: 0; }
+    .truth-table td:first-child { width: 31%; font-weight: 750; }
+    .yes { color: #00665f; font-weight: 800; }
+    .no { color: var(--red); font-weight: 800; }
+
+    .decision {
+      padding: 30px;
+      border-radius: var(--radius);
+      color: #f4f8f7;
+      background: var(--navy);
+    }
+    .decision h3 { color: #97ddd6; }
+    .decision p { color: #d2dfe0; }
+    .decision p:last-child { margin-bottom: 0; }
+
+    .equation {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 26px 0;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: #e8efed;
+    }
+    .equation > div {
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--surface);
+      text-align: center;
+    }
+    .equation strong { display: block; color: var(--navy); font-size: 1.04rem; }
+    .equation span { color: var(--muted); font-size: .84rem; }
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      counter-reset: layer;
+    }
+    .layer {
+      position: relative;
+      padding: 23px 21px 21px 62px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      counter-increment: layer;
+    }
+    .layer::before {
+      position: absolute;
+      top: 20px;
+      left: 18px;
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border-radius: 50%;
+      content: counter(layer);
+      color: white;
+      background: var(--teal);
+      font-size: .78rem;
+      font-weight: 850;
+    }
+    .layer p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .limits li, .links li { margin-bottom: .65rem; }
+    .limits { padding-left: 1.25rem; }
+    .links { columns: 2; padding-left: 1.25rem; }
+
+    footer { color: #c9d7d8; background: #0c2028; }
+    .footer-inner { padding: 30px 0; font-size: .84rem; }
+
+    @media (max-width: 850px) {
+      .grid-2, .grid-3, .metrics, .stack { grid-template-columns: 1fr 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .step { min-height: auto; }
+      .step:not(:last-child)::after { display: none; }
+    }
+    @media (max-width: 580px) {
+      .masthead-inner, main, .footer-inner { width: min(100% - 24px, 1120px); }
+      .masthead-inner { padding: 44px 0 40px; }
+      .grid-2, .grid-3, .metrics, .stack, .equation { grid-template-columns: 1fr; }
+      .truth-table { display: block; overflow-x: auto; }
+      .links { columns: 1; }
+    }
+    @media print {
+      :root { background: white; }
+      body { background: white; }
+      .masthead { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      main { padding-top: 30px; }
+      section { break-inside: avoid; margin-top: 38px; }
+      .card, .thesis, .metric { box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <p class="eyebrow">HYDAT-X · Référentiel indépendant de contre-expertise</p>
+      <h1>Que cherche réellement à démontrer le projet&nbsp;?</h1>
+      <p class="dek">Une lecture claire de la thèse, de l’hypothèse scientifique et de ce que les travaux M01–M02 ont — ou n’ont pas — encore établi.</p>
+      <div class="status-line">
+        <span><strong>État :</strong> READY_FOR_M03_REAUDIT</span>
+        <span><strong>Source :</strong> HYDAT 20260717, ECCC</span>
+        <span><strong>Protocole :</strong> v0.2 DRAFT, non gelé</span>
+        <span><strong>Date :</strong> 27 septembre 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="thesis-title">
+      <p class="section-kicker">L’idée centrale</p>
+      <h2 id="thesis-title">La thèse, en une phrase</h2>
+      <div class="thesis">
+        <p class="lead">Une AUC élevée ne démontre pas, à elle seule, qu’un système sait prévoir des inondations&nbsp;: sa valeur n’est crédible que si elle survit à une évaluation indépendante qui neutralise la saison, la persistance, les fuites temporelles et la mémorisation des stations.</p>
+        <p class="plain"><strong>En langage simple :</strong> HYDAT-X ne cherche pas d’abord à battre le prototype. Il construit une règle du jeu indépendante pour savoir si le prototype apporte réellement de l’information nouvelle, ou s’il reconnaît surtout que le printemps est humide et que le débit de demain ressemble souvent à celui d’aujourd’hui.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hypotheses-title">
+      <p class="section-kicker">La question falsifiable</p>
+      <h2 id="hypotheses-title">Deux explications concurrentes</h2>
+      <div class="grid-2">
+        <article class="card hypothesis null">
+          <span class="tag">H0 · Hypothèse nulle</span>
+          <h3>La performance est surtout apparente</h3>
+          <p>Le score annoncé s’explique principalement par la climatologie, la persistance du débit, une fuite d’information future ou la présence des mêmes stations dans l’apprentissage et le test.</p>
+          <p><strong>Prédiction de H0 :</strong> sur des dates futures et des régions entièrement absentes du train, le candidat n’apporte pas de gain substantiel face aux baselines simples.</p>
+        </article>
+        <article class="card hypothesis">
+          <span class="tag">H1 · Hypothèse de travail</span>
+          <h3>Le prototype apporte un signal prédictif propre</h3>
+          <p>Après contrôle de la saison, de la persistance et des contaminations, le modèle conserve une performance calibrée sur les événements rares et les stations ou régions jamais vues.</p>
+          <p><strong>Prédiction de H1 :</strong> il dépasse les baselines prédéfinies sur les tracks temporel et géographique, sans dégradation cachée sur les extrêmes.</p>
+        </article>
+      </div>
+      <div class="callout">
+        <strong>La cible n’est pas une vérité terrain d’inondation.</strong>
+        HYDAT mesure ici des débits. La cible primaire <code>VERY_HIGH_FLOW_EVENT</code> est un proxy hydrologique de très haut débit. Une inondation réelle dépend aussi de l’hydraulique locale, de l’exposition et des conséquences observées.
+      </div>
+    </section>
+
+    <section aria-labelledby="claim-title">
+      <p class="section-kicker">L’objet testé</p>
+      <h2 id="claim-title">La revendication que le référentiel doit éprouver</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Revendication candidate</h3>
+          <p>Environ 15 ans de données HYDAT, plus de 2&nbsp;000 stations, une AUC-ROC proche de 0,95 sur des données dites inédites.</p>
+        </article>
+        <article class="card">
+          <h3>Risque méthodologique</h3>
+          <p>Un score global peut rester élevé même si le modèle exploite seulement le mois, le débit courant, des seuils calculés avec le futur ou des stations déjà vues.</p>
+        </article>
+        <article class="card">
+          <h3>Question de décision</h3>
+          <p>Le résultat reste-t-il utile et reproductible quand ces raccourcis sont contrôlés dans un protocole fixé avant l’évaluation du candidat&nbsp;?</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="hydat-alone-title">
+      <p class="section-kicker">La limite structurante</p>
+      <h2 id="hydat-alone-title">Ce que HYDAT peut — et ne peut pas — conclure seul</h2>
+      <div class="grid-2">
+        <article class="card hypothesis">
+          <span class="tag">HYDAT sait observer</span>
+          <h3>La réponse hydrologique passée</h3>
+          <p>Les débits et niveaux permettent de caractériser les régimes des rivières, les dépassements rares, la persistance, la saisonnalité et la propagation observée entre stations.</p>
+          <p>Avec les seules valeurs récentes, HYDAT permet aussi une baseline de persistance à très court terme&nbsp;: « le débit élevé actuel risque de le rester demain ».</p>
+        </article>
+        <article class="card hypothesis null">
+          <span class="tag">HYDAT seul ne sait pas</span>
+          <h3>Voir les causes futures ni leurs conséquences</h3>
+          <p>Il ne contient ni la pluie à venir, ni la fonte attendue, ni l’humidité des sols, ni la géométrie complète de la plaine inondable, ni les bâtiments et populations exposés.</p>
+          <p>Il ne suffit donc pas pour prévoir une inondation réelle, cartographier l’eau au sol, estimer les dommages ou prévoir directement un autre phénomène météorologique.</p>
+        </article>
+      </div>
+
+      <div class="equation" aria-label="Décomposition de la prévision au risque">
+        <div><strong>Prévision de l’aléa</strong><span>Météo future + état hydrologique + bassin</span></div>
+        <div><strong>Prévision de l’impact</strong><span>Aléa + exposition + vulnérabilité</span></div>
+        <div><strong>Décision d’alerte</strong><span>Impact probable + délai + règles d’action</span></div>
+      </div>
+
+      <p>Autrement dit, un modèle plus pertinent ne consiste pas seulement à ajouter davantage de lignes HYDAT. Il doit relier une <strong>cause prévue</strong>, un <strong>état initial du bassin</strong>, une <strong>réponse physique</strong> et, si l’on parle de risque, des <strong>conséquences territoriales</strong>.</p>
+    </section>
+
+    <section aria-labelledby="missing-data-title">
+      <p class="section-kicker">Le complément nécessaire</p>
+      <h2 id="missing-data-title">Les six couches d’un véritable système de forecast</h2>
+      <div class="stack">
+        <article class="layer"><h3>Forçages météorologiques futurs</h3><p>Prévisions archivées de précipitations et température, idéalement en ensembles; radar et pluviomètres pour corriger l’état récent. Il faut conserver la version disponible à l’heure d’émission, pas une réanalyse enrichie a posteriori.</p></article>
+        <article class="layer"><h3>État hydrologique initial</h3><p>Débits et niveaux HYDAT récents, débits amont, humidité des sols, neige/SWE, gel, nappes, réservoirs et opérations de barrages. Deux pluies identiques n’ont pas le même effet sur un bassin sec et saturé.</p></article>
+        <article class="layer"><h3>Structure du bassin</h3><p>Réseau hydrographique orienté, limites de bassins, relief/DEM, pentes, sols et géologie, occupation du sol, surfaces imperméables, lacs, barrages et temps de transfert.</p></article>
+        <article class="layer"><h3>Vérité terrain adaptée</h3><p>Pour la crue&nbsp;: niveaux ou débits associés à des seuils locaux documentés. Pour l’inondation&nbsp;: emprises observées, rapports d’événements, routes fermées ou dommages. Le label doit correspondre à la question annoncée.</p></article>
+        <article class="layer"><h3>Exposition et vulnérabilité</h3><p>Population, bâtiments, infrastructures critiques, routes, digues, courbes profondeur-dommage et seuils opérationnels. Cette couche transforme un aléa physique en risque pour les personnes et les actifs.</p></article>
+        <article class="layer"><h3>Protocole de hindcast</h3><p>Rejouer les prévisions comme elles auraient été émises&nbsp;: horodatage strict, données disponibles à l’instant t, rolling origin, régions inédites, probabilités calibrées et métriques par événement et délai.</p></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="phenomena-title">
+      <p class="section-kicker">Un modèle par mécanisme</p>
+      <h2 id="phenomena-title">Les données à ajouter dépendent du phénomène</h2>
+      <table class="truth-table">
+        <thead><tr><th>Phénomène visé</th><th>Compléments prioritaires à HYDAT</th><th>Cible pertinente</th></tr></thead>
+        <tbody>
+          <tr><td>Crue fluviale</td><td>Pluie et température prévues, neige, humidité des sols, débit amont, barrages, réseau de bassin.</td><td>Dépassement d’un seuil local de débit ou de niveau, par horizon.</td></tr>
+          <tr><td>Crue éclair urbaine</td><td>Radar/nowcasting à haute résolution, pluviomètres, topographie fine, égouts, imperméabilisation et saturation.</td><td>Eau au sol, profondeur, route ou secteur affecté dans les prochaines heures.</td></tr>
+          <tr><td>Inondation et impacts</td><td>Hydraulique 1D/2D, sections de rivière, digues, DEM, emprises observées, bâtiments et population.</td><td>Probabilité d’emprise, profondeur ou conséquence — pas seulement haut débit.</td></tr>
+          <tr><td>Sécheresse hydrologique</td><td>Déficit de pluie, évapotranspiration, humidité des sols, neige, nappe, prélèvements et réservoirs.</td><td>Débit sous quantile bas, durée du déficit et restrictions possibles.</td></tr>
+          <tr><td>Embâcle / glace</td><td>Température air/eau, couverture et épaisseur de glace, neige, morphologie du chenal, observations locales.</td><td>Hausse de niveau ou obstruction liée à la glace, étiquetée spécifiquement.</td></tr>
+          <tr><td>Submersion côtière</td><td>Marée, surcote, pression, vent, vagues, niveau marin et topographie côtière.</td><td>Niveau côtier, emprise ou profondeur; HYDAT fluvial devient secondaire.</td></tr>
+          <tr><td>Autres aléas météo</td><td>Variables physiques propres au phénomène&nbsp;: température/humidité pour chaleur, vent/CAPE pour orage, profil vertical pour pluie verglaçante.</td><td>Un label observable spécifique; aucun modèle « météo universel » issu du seul débit.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="minimum-stack-title">
+      <p class="section-kicker">Priorité pragmatique</p>
+      <h2 id="minimum-stack-title">Le prochain modèle utile, sans construire une usine à gaz</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Version minimale pour la crue à 1–7 jours</h3>
+          <ol>
+            <li>HYDAT récent et débits amont;</li>
+            <li>prévisions archivées de pluie et température en ensembles;</li>
+            <li>neige et humidité des sols;</li>
+            <li>graphe des bassins et caractéristiques statiques;</li>
+            <li>seuils locaux de débit/niveau documentés.</li>
+          </ol>
+          <p>Cette version vise d’abord l’<strong>aléa hydrologique</strong>, avec incertitude et calibration.</p>
+        </article>
+        <article class="card">
+          <h3>Extension nécessaire pour parler d’inondation</h3>
+          <ol>
+            <li>géométrie hydraulique et modèle d’écoulement;</li>
+            <li>cartes ou observations d’emprise;</li>
+            <li>digues et ouvrages;</li>
+            <li>exposition des personnes et actifs;</li>
+            <li>seuils de décision co-définis avec les opérateurs.</li>
+          </ol>
+          <p>Cette extension transforme une prévision de débit en prévision d’<strong>impact territorial</strong>.</p>
+        </article>
+      </div>
+      <div class="callout">
+        <strong>Recommandation de conception</strong>
+        Construire une chaîne modulaire — météo → état du bassin → débit/niveau → emprise → impact — et évaluer chaque étage séparément. On saura alors si l’erreur vient de la météo, de l’hydrologie, de l’hydraulique ou de la couche de risque.
+      </div>
+    </section>
+
+    <section aria-labelledby="method-title">
+      <p class="section-kicker">La méthode</p>
+      <h2 id="method-title">Comment HYDAT-X sépare preuve et illusion</h2>
+      <div class="flow" role="list" aria-label="Chaîne de validation HYDAT-X">
+        <div class="step" role="listitem"><span class="step-num">01 · SOURCE</span><strong>Figer la donnée brute</strong><span>HYDAT ECCC, lecture seule, provenance et SHA-256.</span></div>
+        <div class="step" role="listitem"><span class="step-num">02 · CIBLE</span><strong>Définir avant de mesurer</strong><span>Q95 primaire, Q99 rare, pics et persistance comme challenges distincts.</span></div>
+        <div class="step" role="listitem"><span class="step-num">03 · TEMPS</span><strong>Interdire le futur</strong><span>Seuils calculés sur TRAIN ≤ 2010; validation et tests postérieurs.</span></div>
+        <div class="step" role="listitem"><span class="step-num">04 · ESPACE</span><strong>Retirer des régions entières</strong><span>Stations et régions GEO-TEST totalement absentes de GEO-TRAIN.</span></div>
+        <div class="step" role="listitem"><span class="step-num">05 · COMPARAISON</span><strong>Affronter les baselines</strong><span>Climatologie, persistance, modèles statistiques et ML indépendants.</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="done-title">
+      <p class="section-kicker">Ce qui est déjà démontré</p>
+      <h2 id="done-title">M01–M02 ont fiabilisé la règle du jeu</h2>
+      <div class="metrics">
+        <div class="metric"><span class="number">92&nbsp;634</span><span class="label">événements Q95 primaires, sur 2&nbsp;092 stations</span></div>
+        <div class="metric"><span class="number">32&nbsp;819</span><span class="label">événements Q99 pour le stress rare</span></div>
+        <div class="metric"><span class="number">0</span><span class="label">run final avec <code>span ≠ durée</code></span></div>
+        <div class="metric"><span class="number">28/28</span><span class="label">tests de continuité, cache, fuite et provenance</span></div>
+      </div>
+
+      <table class="truth-table">
+        <thead><tr><th>Assertion</th><th>État</th><th>Ce que cela signifie</th></tr></thead>
+        <tbody>
+          <tr><td>Le défaut historique F-01 existait</td><td class="yes">Démontré</td><td>564 violations Q95 et 211 Q99 ont été reproduites dans DATA-AUDIT-001.</td></tr>
+          <tr><td>La segmentation calendaire est corrigée</td><td class="yes">Démontré</td><td>Une lacune coupe le run; aucun run final ne traverse une frontière de split.</td></tr>
+          <tr><td>Le cache est lié à sa source</td><td class="yes">Démontré</td><td>Source, code, paramètres, schéma, environnement et fichier dérivé sont contrôlés.</td></tr>
+          <tr><td>Le split géographique teste des régions inédites</td><td class="yes">Démontré</td><td>1&nbsp;796 stations train et 321 test; aucune station ni région partagée.</td></tr>
+          <tr><td>Le prototype candidat est performant</td><td class="no">Pas encore testé</td><td>Aucune métrique candidate n’a encore été jugée dans ce référentiel.</td></tr>
+          <tr><td>Un très haut débit équivaut à une inondation</td><td class="no">Non démontré</td><td>Le projet utilise un proxy de débit, pas une observation directe des conséquences.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="decision-title">
+      <p class="section-kicker">La logique de décision</p>
+      <h2 id="decision-title">Ce qui ferait pencher la conclusion</h2>
+      <div class="grid-2">
+        <article class="decision">
+          <h3>H1 devient crédible si…</h3>
+          <p>le candidat dépasse les baselines pertinentes, reste calibré, conserve son avantage sur TEST/HOLDOUT et sur des régions jamais vues, et résiste aux analyses de saisonnalité, de rareté et d’extrêmes.</p>
+        </article>
+        <article class="decision">
+          <h3>H0 reste l’explication si…</h3>
+          <p>le gain disparaît face à saison + persistance, s’effondre sur les régions inédites, dépend de seuils informés par le futur ou repose uniquement sur une AUC globale peu informative pour les événements rares.</p>
+        </article>
+      </div>
+      <div class="callout">
+        <strong>Statut exact aujourd’hui : référentiel prêt, conclusion scientifique non rendue.</strong>
+        M02 ne gèle pas v0.2 et ne valide aucun prototype. La prochaine porte est M03, un réaudit indépendant des preuves, des longues séquences et des choix méthodologiques.
+      </div>
+    </section>
+
+    <section aria-labelledby="limits-title">
+      <p class="section-kicker">À ne pas perdre de vue</p>
+      <h2 id="limits-title">Limites connues à transmettre à M03</h2>
+      <ul class="limits">
+        <li>Les plus longues séquences atteignent 678 jours en Q95 et 663 jours en Q99/N5&nbsp;: elles respectent les invariants techniques, mais leur plausibilité hydrologique reste à contre-vérifier.</li>
+        <li>Six événements de pics annuels n’ont pas de mois renseigné dans HYDAT; ils restent explicitement <code>UNKNOWN</code>.</li>
+        <li>Le dénominateur saisonnier normatif de 217 jours produit des jours excédentaires, conservés séparément plutôt que masqués.</li>
+        <li>Les horizons autorisés sont journaliers&nbsp;: 1 jour en primaire, 3 et 7 jours en challenge. Aucune conclusion infrajournalière n’est permise.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="links-title">
+      <p class="section-kicker">Pour vérifier</p>
+      <h2 id="links-title">Documents de preuve</h2>
+      <ul class="links">
+        <li><a href="DATA-AUDIT-002.md">Rapport DATA-AUDIT-002</a></li>
+        <li><a href="TARGET-DESIGN-002.md">Conception des cibles</a></li>
+        <li><a href="SPLIT-DESIGN-001.md">Conception des splits</a></li>
+        <li><a href="HYDAT-DATA-QUALITY-002.md">Qualité et couverture</a></li>
+        <li><a href="DECISIONS-M02.md">Décisions D1–D6</a></li>
+        <li><a href="HYDAT-X-Reference-Protocol-v0.2-DRAFT.md">Protocole v0.2 DRAFT</a></li>
+        <li><a href="mission-HYDAT-X-M02-journal.md">Journal d’exécution M02</a></li>
+        <li><a href="../evaluation/reports/DATA-AUDIT-002/manifest.json">Manifeste et hashes</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">HYDAT-X · Projet 83 · Résumé autonome généré après M02 · Référentiel non gelé</div>
+  </footer>
+</body>
+</html>

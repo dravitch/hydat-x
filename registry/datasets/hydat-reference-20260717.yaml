@@ -4,13 +4,13 @@ source: ECCC (Environnement et Changement climatique Canada)
 release: '20260717'
 retrieved_at_utc: '2026-09-23T08:57:38Z'
 raw_artifacts:
-- path: data/raw/hydat/20260717/HYDAT_Definition_EN.pdf
+- path: data/raw/hydat/20260717/documentation/HYDAT_Definition_EN.pdf
   sha256: b3ab1954bf5aeedb026cebe939764fcfbda0266fb267cb6a7315544c9be8e1ee
-- path: data/raw/hydat/20260717/HYDAT_Definition_FR.pdf
+- path: data/raw/hydat/20260717/documentation/HYDAT_Definition_FR.pdf
   sha256: a74b0c8147f7e70587bf24bf05b124b2707e3fa8d4ae1cbca669ff69795a32b9
-- path: data/raw/hydat/20260717/HYDAT_ReleaseNotes_20260717_EN.pdf
+- path: data/raw/hydat/20260717/documentation/HYDAT_ReleaseNotes_20260717_EN.pdf
   sha256: a9e481777fe635ff52a7630610578469a0e5bfc28b37bd927c933c6b894b3327
-- path: data/raw/hydat/20260717/HYDAT_ReleaseNotes_20260717_FR.pdf
+- path: data/raw/hydat/20260717/documentation/HYDAT_ReleaseNotes_20260717_FR.pdf
   sha256: ab0f126e721ebdc453f15cc9c8a0bab73a615d3aae0bb4ae2758eaad036bc92c
 database:
   format: sqlite

@@ -1,0 +1,174 @@
+protocol_id: reference-v0.2-draft
+version: "0.2-draft"
+status: draft-ready-for-M03-reaudit
+date: "2026-09-27"
+supersedes: "0.1"
+project: 83-HYDAT-X
+mission: REFERENCE-01
+
+scope:
+  reproduce: true
+  challenge: true
+  compare: true
+  out_of_scope:
+    - chaine T1 (destinataire / decision / valeur)
+    - comparateur federal NSRPS / GEM-Hydro
+
+claim_under_test: "15 ans de données HYDAT, 2000+ stations, AUC-ROC 0.95 sur données inédites."
+
+datasets:
+  raw:
+    id: hydat-reference-20260717
+    path: data/raw/hydat/20260717/sqlite/Hydat.sqlite3
+    immutable: true
+    manifest: registry/datasets/hydat-reference-20260717.yaml
+    sha256: "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517"
+  canonical:
+    id: hydat-canonical-dly-flows-v2
+    path: data/canonical/hydat/20260717/daily-flows-v2.parquet
+    manifest: registry/datasets/hydat-daily-flows-v2-cache.json
+    generator: scripts/audit_reference.py
+    immutable_after_publish: false            # non gelé avant M03
+
+observation:
+  variable: debit_moyen_journalier
+  unit: m3/s
+  granularity: jour_x_station
+  valid_day_rule: "value > 0 OR symbol = 'D'"     # 0.0 sans symbole = non-observation (D1)
+  zero_blank_treated_as: missing                  # 2681846 jours ambigus - comptés, jamais imputés
+  estimated_days: included_counted_n_est          # symbole E : inclus + compté (jamais silencieux)
+  ice_symbol_B_days: valid_stratified            # 10.2M jours B - conservés, stratifiés
+
+population:
+  rules:
+    - min_valid_train_days: 1
+    - min_valid_evaluation_days: 1
+    - quality_flags_kept_counted: [B, E, A]
+  coverage_reference:
+    continuous: {expected: 365, threshold_80pct: 292}
+    seasonal: {expected: 217, threshold_80pct: 174}
+  subsamples:
+    - provinces
+    - basins                         # à définir (ecoulement)
+    - rhbn                           # 314 stations réseau de référence
+
+split:
+  temporal:
+    order: [TRAIN, VALIDATION, TEST, HOLDOUT]
+    method: date_based              # jamais train_test_split(random_state)
+    boundaries: {TRAIN: "<=2010", VALIDATION: "2011-2015", TEST: "2016-2020", HOLDOUT: "2021-2025"}
+    manifest: benchmark/splits/temporal/manifest.json
+    rule: "normalisation/imputation/création de variables avant découpage interdite"
+  geographic:
+    method: province_state_territory_holdout
+    region_assignment: "SHA256(PROV_TERR_STATE_LOC) modulo 8"
+    train_buckets: [0, 1, 2, 3, 4, 5, 6]
+    test_buckets: [7]
+    manifest: benchmark/splits/geographic/manifest.json
+  event_split_rule: "segmentation indépendante dans chaque split; aucun run ne traverse une frontière"
+
+targets:
+  registry: benchmark/targets/
+  primary: T1-q095-refhalf
+  challenges: [T1-q099-refhalf, T3-peak-q09-refhalf, T4-q099-N5-refhalf]
+  semantics: VERY_HIGH_FLOW_EVENT_PROXY_NOT_FLOOD_GROUND_TRUTH
+  evaluation_family: reference          # suffixe refhalf uniquement évaluable
+  descriptive_family: whole             # future-informed, réservé au diagnostic
+  never_left_to_candidate: true
+  comparison_mode: per_definition       # définition par définition, jamais a posteriori
+
+leakage:
+  threshold_information_time:
+    future_informed: [whole-series]
+    historical_reference: [refhalf]
+  rules:
+    - split_temporal_avant_tout_calcul
+    - seuils/quantiles figés sur TRAIN uniquement
+    - pas de scaling/imputation post-split
+    - station_geo_train_et_geo_test_interdite
+    - aucun run ne traverse VALIDATION/TEST/HOLDOUT
+  automatic_check: "tests/test_m02_reference.py"
+
+baselines:                                    # évaluées dans LE MÊME protocole que le candidat
+  items:
+    - id: B0
+      name: climatologie
+      idea: "P(VERY_HIGH_FLOW_EVENT | mois), proxy hydrologique empirique"
+    - id: B1
+      name: persistance
+      idea: "Q(t+H) ≈ Q(t)"
+    - id: B2
+      name: saison_plus_persistance
+      idea: "B0 × B1"
+    - id: B3
+      name: seuil_historique
+      idea: "dépassement de l'historique de la station"
+    - id: B4
+      name: modele_statistique_simple
+      idea: "régression logistique (mois, débit, anomalie)"
+    - id: B5
+      name: modele_ml_independant
+      idea: "Random Forest / Gradient Boosting (bien spécifié)"
+  required_gain_vs: [B2, B5]
+  gain_threshold: 0.05                 # Δ AUC/PR-AUC vs B2 ET B5 (proposition)
+
+metrics:
+  items:
+    - AUC-ROC                            # diagnostic global, jamais seul
+    - PR-AUC
+    - precision
+    - recall
+    - recall_at_operational_threshold
+    - recall_top_1_percent
+    - brier_score
+    - calibration
+    - lead_time_curve_days: [1, 3, 7]
+  stratified_by: [season, symbol]      # saison (MAM/DJF/JJA/SON) + symbole (B/E/A)
+
+challenge_track:
+  - id: C1
+    name: temporal_holdout
+  - id: C2
+    name: geographic_holdout
+  - id: C3
+    name: extreme_event_holdout
+  - id: C4
+    name: rare_event_evaluation
+    metrics: [precision, recall, PR-AUC, recall_at_operational_threshold]
+  - id: C5
+    name: daily_horizon_sweep
+    horizons_days: [1, 3, 7]
+    intraday_claims: forbidden
+  - id: C6
+    name: disguised_seasonality
+    compare: "A=candidat ; B=mois+jour ; C=saison+débit ; D=candidat sans variables calendaires → si B≈A, AUC structurale"
+
+reproduction_track:
+  structure: "DATA · FEATURES · TARGET · HORIZON · SPLIT · PREPROCESSING · MODEL · HYPERPARAMETERS · SEED · METRIC"
+  no_silent_modification: true
+  artifacts_dir: reproduction/candidate
+
+experiments:
+  registry: registry/experiments/{ID}.md
+  manifest_fields: [dataset_hash, commit, params, period, stations, target_definition, seed, metrics, artifacts]
+
+decisions_m02:
+  D1: "proxy VERY_HIGH_FLOW_EVENT, jamais vérité terrain d'inondation"
+  D2: "primaire T1-q095; seuil par station sur TRAIN uniquement"
+  D3: "q099 rare, T3 extrême, T4 persistance"
+  D4: "lacune >1 jour coupe; span=dur; T1 sans minimum; N5 séparé"
+  D5: "horizon primaire 1 jour; challenges 3/7 jours; aucun horizon infrajournalier"
+  D6: "TRACK-TEMPORAL par dates et TRACK-GEOGRAPHIC à stations et régions disjointes"
+
+roadmap:
+  - step: v0.2 draft                      # décisions M02 appliquées; en attente du ré-audit M03
+    status: current
+  - step: v0.2 geler
+    status: next
+    actions: [commit daté + hash, manifestes datasets/métriques, stations-v1, cibles refhalf validées]
+  - step: baselines B0-B5 sur référentiel gelé
+    status: later
+    actions: [avant tout code candidat]
+  - step: réception du prototype
+    status: later
+    actions: [entrée comme objet testé contre le référentiel]

@@ -1,0 +1,28 @@
+{
+  "artifact": "benchmark/splits/temporal/station-periods.csv",
+  "population": "all stations with >=1 valid observation in the represented period",
+  "rule": "date-based; same station may occur across temporal partitions",
+  "rules": {
+    "HOLDOUT": [
+      "2021-01-01",
+      "2025-12-31"
+    ],
+    "TEST": [
+      "2016-01-01",
+      "2020-12-31"
+    ],
+    "TRAIN": [
+      null,
+      "2010-12-31"
+    ],
+    "VALIDATION": [
+      "2011-01-01",
+      "2015-12-31"
+    ]
+  },
+  "sha256": "c276eca473c20a3743e4bcab66b74255f4a7ebc2c3c99da020452fe73ddacda4",
+  "split_id": "TRACK-TEMPORAL-v1",
+  "station_period_rows": 12701,
+  "stations": 6464,
+  "status": "reference-not-frozen"
+}

@@ -1,0 +1,473 @@
+{
+  "artifacts": {
+    "benchmark/splits/geographic/manifest.json": {
+      "bytes": 843,
+      "sha256": "790b4dea86079159bc44ca4c2fd3b9162fdbf8d9469c1f2884ebdfdffb644df1"
+    },
+    "benchmark/splits/geographic/stations.csv": {
+      "bytes": 127233,
+      "sha256": "8b2493cc8ca73b6d989986773cf80a559e50ccf9b6b95a9e75190b5e9d3b7656"
+    },
+    "benchmark/splits/temporal/manifest.json": {
+      "bytes": 688,
+      "sha256": "8b2933ae918edab7c9903fdbc25d468ec7ba0809ef46a0ce1c45fbd5fb3ec779"
+    },
+    "benchmark/splits/temporal/station-periods.csv": {
+      "bytes": 531945,
+      "sha256": "c276eca473c20a3743e4bcab66b74255f4a7ebc2c3c99da020452fe73ddacda4"
+    },
+    "benchmark/targets/T1-q095-refhalf.yaml": {
+      "bytes": 656,
+      "sha256": "5285b064a92dc27a687377dc58bbfd05931ac2ae65dcbb21ea58b9e276fcd96a"
+    },
+    "benchmark/targets/T1-q099-refhalf.yaml": {
+      "bytes": 625,
+      "sha256": "e012bbdaf157e1a5e414f98787589765d781a6b794ec967d1b6b2d88067dd064"
+    },
+    "benchmark/targets/T3-peak-q09-refhalf.yaml": {
+      "bytes": 529,
+      "sha256": "594cf4bd8dfa0d8d537eae378b9ecd3679b17c091be94339e9ac88b0602d4024"
+    },
+    "benchmark/targets/T4-q099-N5-refhalf.yaml": {
+      "bytes": 649,
+      "sha256": "c60dab4e0a3f40028f2bfa5ec63ab80b3c60fc31f9b45c90798f0215cf914574"
+    },
+    "evaluation/reports/DATA-AUDIT-002/coverage/station-year-coverage.csv": {
+      "bytes": 11909832,
+      "sha256": "6508b4df4b7032611205dee241bb998a1efacef7178d78202e1dfbe209e8b737"
+    },
+    "evaluation/reports/DATA-AUDIT-002/events/T1-q095-refhalf.csv": {
+      "bytes": 7626631,
+      "sha256": "8f7e7e7aa95295cc36b27dcca8fd48b8a8d0588b1988a6749c92af8ff5f82350"
+    },
+    "evaluation/reports/DATA-AUDIT-002/events/T1-q099-refhalf.csv": {
+      "bytes": 2698829,
+      "sha256": "350836e814dc5323d3acfd4e84d7fed7038c30d294f7b40698a5f3e00dd3e8d0"
+    },
+    "evaluation/reports/DATA-AUDIT-002/events/T3-peak-q09-refhalf.csv": {
+      "bytes": 392400,
+      "sha256": "aea411bcd168bcbae50b13d129a65d6022a0aa1a7ad489329ba33e79d979e55b"
+    },
+    "evaluation/reports/DATA-AUDIT-002/events/T4-q099-N5-refhalf.csv": {
+      "bytes": 597135,
+      "sha256": "97a6b125ff89a96d5af098e60846acb8023a9c3bd80762ee45824b8d1a9cf174"
+    },
+    "evaluation/reports/DATA-AUDIT-002/provenance/environment.json": {
+      "bytes": 120,
+      "sha256": "c6790c790cd1f5b70365153d0f45520a581b5b1d8b0a727f1ec7917c37c70aac"
+    },
+    "evaluation/reports/DATA-AUDIT-002/provenance/source.json": {
+      "bytes": 216,
+      "sha256": "094b026942db14fdcf26580403dd09604d94690aa5998a7ed59f2f753e89e888"
+    },
+    "evaluation/reports/DATA-AUDIT-002/quality/summary.json": {
+      "bytes": 326,
+      "sha256": "c2689f277db513fabeac12c91c0ee501199c73fe3aa8543b0fc0dc6a49c14286"
+    },
+    "evaluation/reports/DATA-AUDIT-002/seasonality/events-by-month.csv": {
+      "bytes": 1224,
+      "sha256": "5c8fca2be03d7d55c18b7ec8854305fcd60ee14dab4380d98ec080b9331909a9"
+    },
+    "evaluation/reports/DATA-AUDIT-002/targets/T1-q095-refhalf-thresholds.csv": {
+      "bytes": 388721,
+      "sha256": "ef53179c4ef7337ce6eba63200f44c17c91feee4d444517a49848ef923e54475"
+    },
+    "evaluation/reports/DATA-AUDIT-002/targets/T1-q099-refhalf-thresholds.csv": {
+      "bytes": 391170,
+      "sha256": "cde76d8bf9c0de0637c9bd7921bb755fc5db0ef16381f8e2e7597b2aec51f972"
+    },
+    "evaluation/reports/DATA-AUDIT-002/targets/T3-peak-q09-refhalf-thresholds.csv": {
+      "bytes": 136183,
+      "sha256": "146b5813a8c1389c82cb5befee0e285883e45eca04a2fe09b1f56e25bb047e08"
+    },
+    "evaluation/reports/DATA-AUDIT-002/targets/T4-q099-N5-refhalf-thresholds.csv": {
+      "bytes": 391170,
+      "sha256": "cde76d8bf9c0de0637c9bd7921bb755fc5db0ef16381f8e2e7597b2aec51f972"
+    },
+    "registry/datasets/hydat-daily-flows-v2-cache.json": {
+      "bytes": 935,
+      "sha256": "3f6365b3d38bc4316fcf86fb921d191d8e5f11a1d349c37822a9756c165f02d7"
+    }
+  },
+  "audit_id": "DATA-AUDIT-002",
+  "cache": {
+    "action": "accepted",
+    "cache_path": "/home/andrei/Projects/83_HYDAT-X/data/canonical/hydat/20260717/daily-flows-v2.parquet",
+    "cache_sha256": "4554505fe342b1df0be0cf8e3cdf36e7c234e36b15986d1c724ad05135a66369",
+    "identity": {
+      "generator_sha256": {
+        "/home/andrei/Projects/83_HYDAT-X/scripts/audit_reference.py": "708572943bc68a206641737251a3d51e4917ca163a4acaba3ecbe2839497c913",
+        "/home/andrei/Projects/83_HYDAT-X/scripts/cache_manager.py": "27bd062c5b6b18dd2e2e050fb13749a5f26bdc7fea304fddf1b7a7d3bd291121"
+      },
+      "identity_sha256": "17fd3d09fe6f5fcb4091b89e85c39013ffc961b06feb9e728cb78ad9db9dfbc2",
+      "parameters": {
+        "duckdb_version": "1.5.5",
+        "table": "DLY_FLOWS",
+        "validity": "value>0 OR symbol='D'"
+      },
+      "schema_version": "hydat-daily-flow-v2",
+      "source_sha256": "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517"
+    },
+    "regeneration_reason": "identit\u00e9 du cache divergente"
+  },
+  "elapsed_seconds": 37.286,
+  "environment": {
+    "duckdb": "1.5.5",
+    "pandas": "2.3.3",
+    "platform": "Linux-6.18.50-x86_64-with-glibc2.40",
+    "python": "3.12.8"
+  },
+  "generated_at_utc": "2026-09-27T23:32:39.663987+00:00",
+  "periods": {
+    "evaluation": [
+      "2011-01-01",
+      "2025-12-31"
+    ],
+    "reference": [
+      null,
+      "2010-12-31"
+    ]
+  },
+  "pipeline": {
+    "path": "scripts/audit_reference.py",
+    "sha256": "708572943bc68a206641737251a3d51e4917ca163a4acaba3ecbe2839497c913"
+  },
+  "quality": {
+    "continuous_rows": 169477,
+    "coverage_rule": {
+      "continuous": "292/365 (293/366 leap year)",
+      "seasonal": "174/217"
+    },
+    "estimated_cells": 2788356,
+    "observed_days_above_denominator": 22377,
+    "rows_meeting_80pct": 108253,
+    "seasonal_rows": 1952,
+    "station_year_rows": 171429,
+    "zero_blank_cells": 2681846
+  },
+  "source": {
+    "access": "DuckDB SQLite attachment READ_ONLY",
+    "path": "data/raw/hydat/20260717/sqlite/Hydat.sqlite3",
+    "release": "20260717",
+    "sha256": "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517",
+    "sha256_after": "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517",
+    "unchanged": true
+  },
+  "splits": {
+    "geographic": {
+      "artifact": "benchmark/splits/geographic/stations.csv",
+      "dates": {
+        "evaluation": [
+          "2011-01-01",
+          "2025-12-31"
+        ],
+        "reference_end": "2010-12-31"
+      },
+      "population": "stations with >=1 valid TRAIN and >=1 valid 2011-2025 observation",
+      "rule": "province/state/territory holdout: SHA256(geographic_region) modulo 8; bucket 7 test",
+      "sha256": "8b2493cc8ca73b6d989986773cf80a559e50ccf9b6b95a9e75190b5e9d3b7656",
+      "split_id": "TRACK-GEOGRAPHIC-v1",
+      "stations": 2117,
+      "status": "reference-not-frozen",
+      "test_regions": [
+        "AK",
+        "NL",
+        "NT",
+        "QC"
+      ],
+      "test_stations": 321,
+      "train_regions": [
+        "AB",
+        "BC",
+        "ID",
+        "MB",
+        "ME",
+        "MI",
+        "MN",
+        "MT",
+        "NB",
+        "ND",
+        "NS",
+        "NU",
+        "ON",
+        "PE",
+        "SK",
+        "WA",
+        "YT"
+      ],
+      "train_stations": 1796
+    },
+    "temporal": {
+      "artifact": "benchmark/splits/temporal/station-periods.csv",
+      "population": "all stations with >=1 valid observation in the represented period",
+      "rule": "date-based; same station may occur across temporal partitions",
+      "rules": {
+        "HOLDOUT": [
+          "2021-01-01",
+          "2025-12-31"
+        ],
+        "TEST": [
+          "2016-01-01",
+          "2020-12-31"
+        ],
+        "TRAIN": [
+          null,
+          "2010-12-31"
+        ],
+        "VALIDATION": [
+          "2011-01-01",
+          "2015-12-31"
+        ]
+      },
+      "sha256": "c276eca473c20a3743e4bcab66b74255f4a7ebc2c3c99da020452fe73ddacda4",
+      "split_id": "TRACK-TEMPORAL-v1",
+      "station_period_rows": 12701,
+      "stations": 6464,
+      "status": "reference-not-frozen"
+    }
+  },
+  "status": "READY_FOR_M03_REAUDIT",
+  "targets": [
+    {
+      "application_period": [
+        "2011-01-01",
+        "2025-12-31"
+      ],
+      "artifact": "evaluation/reports/DATA-AUDIT-002/events/T1-q095-refhalf.csv",
+      "artifact_sha256": "8f7e7e7aa95295cc36b27dcca8fd48b8a8d0588b1988a6749c92af8ff5f82350",
+      "coverage": {
+        "artifact": "evaluation/reports/DATA-AUDIT-002/coverage/station-year-coverage.csv",
+        "denominators": {
+          "continuous": "292/365 (293/366 leap year)",
+          "seasonal": "174/217"
+        },
+        "median_coverage_ratio": 1.0,
+        "population": "station-years 2011-2025 for stations with at least one target event",
+        "share_meeting_80pct": 0.7019025224454896,
+        "station_years": 28068,
+        "station_years_meeting_80pct": 19701
+      },
+      "definition": "value > station TRAIN q0.95; calendar-contiguous run within one temporal split; min_duration=1",
+      "events": 92634,
+      "events_per_station": 44.280114722753346,
+      "leakage_risk": "controlled: threshold reference_end <= 2010-12-31; application >= 2011-01-01",
+      "max_duration_days": 678,
+      "median_duration_days": 2.0,
+      "role": "PRIMARY",
+      "seasonality": {
+        "basis": "event start month",
+        "events_by_month": {
+          "1": 6294,
+          "10": 4923,
+          "11": 6241,
+          "12": 6305,
+          "2": 4388,
+          "3": 10945,
+          "4": 16160,
+          "5": 14790,
+          "6": 11267,
+          "7": 5428,
+          "8": 2704,
+          "9": 3189
+        }
+      },
+      "span_duration_violations": 0,
+      "stations": 2092,
+      "target_id": "T1-q095-refhalf",
+      "threshold_artifact": "evaluation/reports/DATA-AUDIT-002/targets/T1-q095-refhalf-thresholds.csv",
+      "threshold_artifact_sha256": "ef53179c4ef7337ce6eba63200f44c17c91feee4d444517a49848ef923e54475",
+      "threshold_distribution": {
+        "maximum": 22600.0,
+        "median": 8.850500345230095,
+        "minimum": 0.0010000000474974513,
+        "stations_with_threshold": 6275
+      },
+      "threshold_period": [
+        null,
+        "2010-12-31"
+      ],
+      "threshold_quantile": 0.95
+    },
+    {
+      "application_period": [
+        "2011-01-01",
+        "2025-12-31"
+      ],
+      "artifact": "evaluation/reports/DATA-AUDIT-002/events/T1-q099-refhalf.csv",
+      "artifact_sha256": "350836e814dc5323d3acfd4e84d7fed7038c30d294f7b40698a5f3e00dd3e8d0",
+      "coverage": {
+        "artifact": "evaluation/reports/DATA-AUDIT-002/coverage/station-year-coverage.csv",
+        "denominators": {
+          "continuous": "292/365 (293/366 leap year)",
+          "seasonal": "174/217"
+        },
+        "median_coverage_ratio": 1.0,
+        "population": "station-years 2011-2025 for stations with at least one target event",
+        "share_meeting_80pct": 0.7047991880527765,
+        "station_years": 27588,
+        "station_years_meeting_80pct": 19444
+      },
+      "definition": "value > station TRAIN q0.99; calendar-contiguous run within one temporal split; min_duration=1",
+      "events": 32819,
+      "events_per_station": 16.056262230919764,
+      "leakage_risk": "controlled: threshold reference_end <= 2010-12-31; application >= 2011-01-01",
+      "max_duration_days": 663,
+      "median_duration_days": 2.0,
+      "role": "RARE-STRESS",
+      "seasonality": {
+        "basis": "event start month",
+        "events_by_month": {
+          "1": 2258,
+          "10": 1336,
+          "11": 1939,
+          "12": 1552,
+          "2": 1371,
+          "3": 3190,
+          "4": 6617,
+          "5": 6363,
+          "6": 4714,
+          "7": 1926,
+          "8": 698,
+          "9": 855
+        }
+      },
+      "span_duration_violations": 0,
+      "stations": 2044,
+      "target_id": "T1-q099-refhalf",
+      "threshold_artifact": "evaluation/reports/DATA-AUDIT-002/targets/T1-q099-refhalf-thresholds.csv",
+      "threshold_artifact_sha256": "cde76d8bf9c0de0637c9bd7921bb755fc5db0ef16381f8e2e7597b2aec51f972",
+      "threshold_distribution": {
+        "maximum": 28900.0,
+        "median": 17.810000381469706,
+        "minimum": 0.0010000000474974513,
+        "stations_with_threshold": 6275
+      },
+      "threshold_period": [
+        null,
+        "2010-12-31"
+      ],
+      "threshold_quantile": 0.99
+    },
+    {
+      "application_period": [
+        "2011-01-01",
+        "2025-12-31"
+      ],
+      "artifact": "evaluation/reports/DATA-AUDIT-002/events/T4-q099-N5-refhalf.csv",
+      "artifact_sha256": "97a6b125ff89a96d5af098e60846acb8023a9c3bd80762ee45824b8d1a9cf174",
+      "coverage": {
+        "artifact": "evaluation/reports/DATA-AUDIT-002/coverage/station-year-coverage.csv",
+        "denominators": {
+          "continuous": "292/365 (293/366 leap year)",
+          "seasonal": "174/217"
+        },
+        "median_coverage_ratio": 1.0,
+        "population": "station-years 2011-2025 for stations with at least one target event",
+        "share_meeting_80pct": 0.6960500090596122,
+        "station_years": 22076,
+        "station_years_meeting_80pct": 15366
+      },
+      "definition": "value > station TRAIN q0.99; calendar-contiguous run within one temporal split; min_duration=5",
+      "events": 6708,
+      "events_per_station": 4.145859085290482,
+      "leakage_risk": "controlled: threshold reference_end <= 2010-12-31; application >= 2011-01-01",
+      "max_duration_days": 663,
+      "median_duration_days": 8.0,
+      "role": "PERSISTENCE-CHALLENGE",
+      "seasonality": {
+        "basis": "event start month",
+        "events_by_month": {
+          "1": 85,
+          "10": 81,
+          "11": 81,
+          "12": 80,
+          "2": 36,
+          "3": 284,
+          "4": 1992,
+          "5": 2133,
+          "6": 1362,
+          "7": 440,
+          "8": 88,
+          "9": 46
+        }
+      },
+      "span_duration_violations": 0,
+      "stations": 1618,
+      "target_id": "T4-q099-N5-refhalf",
+      "threshold_artifact": "evaluation/reports/DATA-AUDIT-002/targets/T4-q099-N5-refhalf-thresholds.csv",
+      "threshold_artifact_sha256": "cde76d8bf9c0de0637c9bd7921bb755fc5db0ef16381f8e2e7597b2aec51f972",
+      "threshold_distribution": {
+        "maximum": 28900.0,
+        "median": 17.810000381469706,
+        "minimum": 0.0010000000474974513,
+        "stations_with_threshold": 6275
+      },
+      "threshold_period": [
+        null,
+        "2010-12-31"
+      ],
+      "threshold_quantile": 0.99
+    },
+    {
+      "application_period": [
+        "2011-01-01",
+        "2025-12-31"
+      ],
+      "artifact": "evaluation/reports/DATA-AUDIT-002/events/T3-peak-q09-refhalf.csv",
+      "artifact_sha256": "aea411bcd168bcbae50b13d129a65d6022a0aa1a7ad489329ba33e79d979e55b",
+      "coverage": {
+        "artifact": "evaluation/reports/DATA-AUDIT-002/coverage/station-year-coverage.csv",
+        "denominators": {
+          "continuous": "292/365 (293/366 leap year)",
+          "seasonal": "174/217"
+        },
+        "median_coverage_ratio": 1.0,
+        "population": "station-years 2011-2025 for stations with at least one target event",
+        "share_meeting_80pct": 0.7221234168687686,
+        "station_years": 18555,
+        "station_years_meeting_80pct": 13399
+      },
+      "definition": "annual instantaneous high peak > station q0.9 estimated on TRAIN",
+      "events": 3442,
+      "events_per_station": 2.564828614008942,
+      "leakage_risk": "controlled: annual-peak threshold uses years <=2010 only",
+      "max_duration_days": 1,
+      "median_duration_days": 1.0,
+      "role": "EXTREME-CHALLENGE",
+      "seasonality": {
+        "basis": "annual peak month",
+        "events_by_month": {
+          "1": 130,
+          "10": 126,
+          "11": 132,
+          "12": 80,
+          "2": 111,
+          "3": 122,
+          "4": 692,
+          "5": 738,
+          "6": 789,
+          "7": 352,
+          "8": 81,
+          "9": 83,
+          "UNKNOWN": 6
+        }
+      },
+      "span_duration_violations": 0,
+      "stations": 1342,
+      "target_id": "T3-peak-q09-refhalf",
+      "threshold_artifact": "evaluation/reports/DATA-AUDIT-002/targets/T3-peak-q09-refhalf-thresholds.csv",
+      "threshold_artifact_sha256": "146b5813a8c1389c82cb5befee0e285883e45eca04a2fe09b1f56e25bb047e08",
+      "threshold_distribution": {
+        "maximum": 30670.0,
+        "median": 50.5,
+        "minimum": 0.0,
+        "stations_with_threshold": 3335
+      },
+      "threshold_period": [
+        null,
+        "2010-12-31"
+      ],
+      "threshold_quantile": 0.9
+    }
+  ]
+}

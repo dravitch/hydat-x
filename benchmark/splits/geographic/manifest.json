@@ -1,0 +1,43 @@
+{
+  "artifact": "benchmark/splits/geographic/stations.csv",
+  "dates": {
+    "evaluation": [
+      "2011-01-01",
+      "2025-12-31"
+    ],
+    "reference_end": "2010-12-31"
+  },
+  "population": "stations with >=1 valid TRAIN and >=1 valid 2011-2025 observation",
+  "rule": "province/state/territory holdout: SHA256(geographic_region) modulo 8; bucket 7 test",
+  "sha256": "8b2493cc8ca73b6d989986773cf80a559e50ccf9b6b95a9e75190b5e9d3b7656",
+  "split_id": "TRACK-GEOGRAPHIC-v1",
+  "stations": 2117,
+  "status": "reference-not-frozen",
+  "test_regions": [
+    "AK",
+    "NL",
+    "NT",
+    "QC"
+  ],
+  "test_stations": 321,
+  "train_regions": [
+    "AB",
+    "BC",
+    "ID",
+    "MB",
+    "ME",
+    "MI",
+    "MN",
+    "MT",
+    "NB",
+    "ND",
+    "NS",
+    "NU",
+    "ON",
+    "PE",
+    "SK",
+    "WA",
+    "YT"
+  ],
+  "train_stations": 1796
+}

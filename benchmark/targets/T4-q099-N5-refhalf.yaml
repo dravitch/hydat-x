@@ -1,0 +1,13 @@
+id: T4-q099-N5-refhalf
+role: PERSISTENCE-CHALLENGE
+status: reference-not-frozen
+semantics: PERSISTENT_VERY_HIGH_FLOW_EVENT
+claim_limit: proxy hydrologique; jamais une vérité terrain d'inondation
+threshold: station_quantile_0.99
+threshold_period: {start: null, end: '2010-12-31', split: TRAIN}
+application_period: {start: '2011-01-01', end: '2025-12-31'}
+event_rule: run calendaire de jours consécutifs strictement au-dessus du seuil, borné à un split temporel
+gap_rule: toute lacune supérieure à un jour sépare deux runs
+minimum_duration_days: 5
+horizon_days: [3, 7]
+artifact: evaluation/reports/DATA-AUDIT-002/events/T4-q099-N5-refhalf.csv

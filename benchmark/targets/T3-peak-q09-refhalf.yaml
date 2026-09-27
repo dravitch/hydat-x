@@ -1,0 +1,11 @@
+id: T3-peak-q09-refhalf
+role: EXTREME-CHALLENGE
+status: reference-not-frozen
+semantics: EXTREME_ANNUAL_INSTANTANEOUS_HIGH_FLOW
+claim_limit: proxy hydrologique; jamais une vérité terrain d'inondation
+source: ANNUAL_INSTANT_PEAKS where DATA_TYPE=Q and PEAK_CODE=H
+threshold: station_quantile_0.90
+threshold_period: {start: null, end: '2010-12-31', split: TRAIN}
+application_period: {start: '2011-01-01', end: '2025-12-31'}
+horizon: annual-peak challenge
+artifact: evaluation/reports/DATA-AUDIT-002/events/T3-peak-q09-refhalf.csv

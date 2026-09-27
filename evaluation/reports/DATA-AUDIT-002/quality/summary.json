@@ -1,0 +1,13 @@
+{
+  "continuous_rows": 169477,
+  "coverage_rule": {
+    "continuous": "292/365 (293/366 leap year)",
+    "seasonal": "174/217"
+  },
+  "estimated_cells": 2788356,
+  "observed_days_above_denominator": 22377,
+  "rows_meeting_80pct": 108253,
+  "seasonal_rows": 1952,
+  "station_year_rows": 171429,
+  "zero_blank_cells": 2681846
+}

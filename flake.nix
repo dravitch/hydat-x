@@ -34,6 +34,8 @@
               gzip
               xz
               zstd
+              # Lecture de la documentation ECCC (PDF) — audit des flags/sémantique
+              poppler_utils
               # Bibliothèques natives requises par les wheels (numpy/pandas/…)
               stdenv.cc.cc.lib
               zlib

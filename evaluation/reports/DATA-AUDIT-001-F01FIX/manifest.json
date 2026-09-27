@@ -1,0 +1,40 @@
+{
+  "audit_id": "DATA-AUDIT-001-F01FIX",
+  "cache_identity": {
+    "chemin": "logs/audit/dly_flows.parquet",
+    "genere_par_code_sha256": {
+      "scripts/audit_hydat.py": "8a66610c283e91fac040bdaa5f00a11d759ee673bc00a8e04502acbf37785c7e",
+      "scripts/segmentation.py": "f98617fb3be1ed395a9322b8f6a6db41d73a987e7cd6892b54a1ecdaa887689f"
+    },
+    "note": "cache reutilise tel quel ; identite scellee ici (F-03). Une regeneration doit reproduire ce sha256.",
+    "octets": 293811822,
+    "sha256": "c05aa2a5eb0f929a70f2e50a7ad557e83d2d917475ab30c1e735d5d15f3dba5e",
+    "source_base_sha256": "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517"
+  },
+  "cible": [
+    {
+      "cible": "T1-q095-refhalf",
+      "fichier": "evaluation/reports/DATA-AUDIT-001-F01FIX/events/T1-q095-refhalf.csv",
+      "min_dur": 1,
+      "n_events": 240067,
+      "qfrac": 0.95,
+      "sha256": "9c0705479471373f8c8c0d74d6635ab3e66b23f34d83027cc87dea8cab6142fa",
+      "span_ne_dur": 0
+    },
+    {
+      "cible": "T1-q099-refhalf",
+      "fichier": "evaluation/reports/DATA-AUDIT-001-F01FIX/events/T1-q099-refhalf.csv",
+      "min_dur": 1,
+      "n_events": 85629,
+      "qfrac": 0.99,
+      "sha256": "eea44d859a697457bc7ce37bb3e47ede5393cc66dbb31c2be803fdfc54b4ab12",
+      "span_ne_dur": 0
+    }
+  ],
+  "correction": "segmentation calendaire continue (lacune = separateur)",
+  "finding": "F-01",
+  "relie_a": "DATA-AUDIT-001 (preuve avant, intacte)",
+  "seuils": "reutilises tels quels (Audit.station_thresholds, politique reference-first-half) — aucun seuil invente",
+  "source_base": "/home/andrei/Projects/83_HYDAT-X/data/raw/hydat/20260717/sqlite/Hydat.sqlite3",
+  "source_base_sha256": "9185ea30301229ed90675dc82d71efe4b294d6f0227241e219d4c26d212ef517"
+}
